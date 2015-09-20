@@ -6,8 +6,8 @@ CIS 520 - Programming Project #1
 
 >> Fill in the names and email addresses of your group members.
 
-FirstName LastName <email@k-state.edu>
-FirstName LastName <email@k-state.edu>
+Skylar James <champ43@k-state.edu>
+Austin Haverkamp <ahaverkamp@k-state.edu>
 ...
 
 ---- PRELIMINARIES ----
@@ -29,11 +29,24 @@ FirstName LastName <email@k-state.edu>
 >> `struct' member, global or static variable, `typedef', or
 >> enumeration.  Identify the purpose of each in 25 words or less.
 
+Changes                           |Reason for Change
+__________________________________|___________________________________________________________________________________
+1.int64_t sleep_ticks;            |Was added to threads.h to keep track of the time to sleep in ticks.
+2.void timer_sleep(int64_t ticks) |Was edited in timer.c. It was changed to stop it from spinnning in a loop checking                                   |time and calling thread_yield().
+__________________________________|___________________________________________________________________________________
+
 
 ---- ALGORITHMS ----
 
 >> A2: Briefly describe what happens in a call to your timer_sleep(),
 >> including the effects of the timer interrupt handler.
+
+Function timer_sleep(int64_t ticks)
+
+Process
+1. First it checks to see if ticks is valid and if not it returns.
+2. Next step is we turn on interupts so we can keep track of the number of ticks
+3. 
 
 >> A3: What steps are taken to minimize the amount of time spent in
 >> the timer interrupt handler?
